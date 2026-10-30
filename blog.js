@@ -8,7 +8,7 @@
     list.innerHTML = data.posts
       .map(
         (p) => `<a class="card blog-card" href="${p.link}" target="_blank" rel="noopener">
-  <div class="photo">${p.image ? `<img src="${p.image}" alt="" loading="lazy">` : ""}</div>
+  <div class="photo" data-label="note">${p.image ? `<img src="${p.image}" alt="" loading="lazy">` : ""}</div>
   <small>${p.date.replace(/-/g, ".")}</small><h3>${p.title.replace(/</g, "&lt;")}</h3></a>`,
       )
       .join("");

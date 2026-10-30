@@ -21,7 +21,8 @@ async function notePosts(user) {
   return [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0, 3).map(([, item]) => ({
     title: pick(item, "title"),
     link: pick(item, "link"),
-    date: new Date(pick(item, "pubDate")).toISOString().slice(0, 10),
+    // Japan date (pubDate is +0900; toISOString alone would give the UTC day)
+    date: new Date(Date.parse(pick(item, "pubDate")) + 9 * 3600e3).toISOString().slice(0, 10),
     image: pick(item, "media:thumbnail"),
   }));
 }
