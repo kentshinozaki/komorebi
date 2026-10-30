@@ -23,7 +23,7 @@ async function notePosts(user) {
     link: pick(item, "link"),
     // Japan date (pubDate is +0900; toISOString alone would give the UTC day)
     date: new Date(Date.parse(pick(item, "pubDate")) + 9 * 3600e3).toISOString().slice(0, 10),
-    image: pick(item, "media:thumbnail"),
+    image: pick(item, "media:thumbnail") || (item.match(/<media:thumbnail[^>]*url="([^"]+)"/) || [])[1] || "",
   }));
 }
 
