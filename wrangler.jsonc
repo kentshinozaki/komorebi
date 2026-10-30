@@ -1,8 +1,15 @@
 {
   "name": "komorebi",
+  "main": "worker/index.js",
   "compatibility_date": "2026-10-29",
   "assets": {
-    "directory": "./"
+    "directory": "./",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  // note ID of the shop's blog; empty = sample posts
+  "vars": {
+    "NOTE_USER": ""
   },
   "previews": {}
 }
