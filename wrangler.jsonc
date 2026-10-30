@@ -9,7 +9,7 @@
   },
   // note ID of the shop's blog; empty = sample posts
   "vars": {
-    "NOTE_USER": ""
+    "NOTE_USER": "madino_design"
   },
   "previews": {}
 }
